@@ -1,5 +1,6 @@
 package com.codewithlei.JobTracker.joblisting;
 
+import com.codewithlei.JobTracker.joblisting.dto.ResponseJobListingDTO;
 import org.springframework.stereotype.Component;
 
 @Component

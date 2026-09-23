@@ -1,5 +1,7 @@
 package com.codewithlei.JobTracker.joblisting;
 
+import com.codewithlei.JobTracker.joblisting.enums.InterviewType;
+import com.codewithlei.JobTracker.joblisting.enums.JobStatus;
 import jakarta.persistence.*;
 import lombok.*;
 

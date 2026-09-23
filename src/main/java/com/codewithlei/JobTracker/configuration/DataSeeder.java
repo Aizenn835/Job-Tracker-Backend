@@ -1,9 +1,9 @@
 package com.codewithlei.JobTracker.configuration;
 
-import com.codewithlei.JobTracker.joblisting.InterviewType;
+import com.codewithlei.JobTracker.joblisting.enums.InterviewType;
 import com.codewithlei.JobTracker.joblisting.JobListing;
 import com.codewithlei.JobTracker.joblisting.JobListingRepository;
-import com.codewithlei.JobTracker.joblisting.JobStatus;
+import com.codewithlei.JobTracker.joblisting.enums.JobStatus;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;

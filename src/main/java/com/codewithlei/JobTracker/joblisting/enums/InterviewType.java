@@ -1,4 +1,4 @@
-package com.codewithlei.JobTracker.joblisting;
+package com.codewithlei.JobTracker.joblisting.enums;
 
 public enum InterviewType {
     IN_PERSON,

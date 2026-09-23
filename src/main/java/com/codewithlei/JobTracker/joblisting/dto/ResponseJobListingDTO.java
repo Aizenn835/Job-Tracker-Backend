@@ -1,5 +1,7 @@
-package com.codewithlei.JobTracker.joblisting;
+package com.codewithlei.JobTracker.joblisting.dto;
 
+import com.codewithlei.JobTracker.joblisting.enums.InterviewType;
+import com.codewithlei.JobTracker.joblisting.enums.JobStatus;
 import lombok.Builder;
 import lombok.Data;
 
