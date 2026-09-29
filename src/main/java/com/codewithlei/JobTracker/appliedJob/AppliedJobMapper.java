@@ -1,20 +1,20 @@
-package com.codewithlei.JobTracker.joblisting;
+package com.codewithlei.JobTracker.appliedJob;
 
-import com.codewithlei.JobTracker.joblisting.dto.ResponseJobListingDTO;
+import com.codewithlei.JobTracker.appliedJob.dto.ResponseAppliedJobDTO;
 import org.springframework.stereotype.Component;
 
 @Component
-public class JobListingMapper {
-    public ResponseJobListingDTO mapToDTO(JobListing job){
-       return ResponseJobListingDTO.builder()
+public class AppliedJobMapper {
+    public ResponseAppliedJobDTO mapToDTO(AppliedJobEntity job){
+       return ResponseAppliedJobDTO.builder()
                 .id(job.getId())
+                .imgUrl(job.getImgUrl())
                 .companyName(job.getCompanyName())
                 .location(job.getLocation())
                 .jobTitle(job.getJobTitle())
                 .minimumSalary(job.getMinimumSalary())
                 .maximumSalary(job.getMaximumSalary())
-                .month(job.getMonth())
-                .year(job.getYear())
+                .interviewDate(job.getInterviewDate())
                 .interviewType(job.getInterviewType())
                 .stage(job.getStage())
                 .build();

@@ -1,4 +1,4 @@
-package com.codewithlei.JobTracker.users;
+package com.codewithlei.JobTracker.users.enums;
 
 public enum Roles {
     ADMIN,

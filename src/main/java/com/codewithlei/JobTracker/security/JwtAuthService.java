@@ -22,7 +22,7 @@ public class JwtAuthService {
         byte[] keys = Decoders.BASE64.decode(secretKey);
         return Keys.hmacShaKeyFor(keys);
     }
-    public String generateKey(String email , String role){
+    public String generateToken(String email , String role){
         return Jwts.builder()
                 .signWith(getSigningKey())
                 .setSubject(email)

@@ -1,8 +1,12 @@
 package com.codewithlei.JobTracker.users;
 
+import com.codewithlei.JobTracker.users.enums.AccountType;
+import com.codewithlei.JobTracker.users.enums.Roles;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
 import lombok.*;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "users")
@@ -11,10 +15,13 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Users {
+public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "profile_img")
+    private String imgUrl;
 
     @Column(nullable = false)
     private String username;
@@ -26,7 +33,6 @@ public class Users {
     private String lastname;
 
     @Column(nullable = false)
-    @Email
     private String email;
 
     @Column(nullable = false)
@@ -34,5 +40,14 @@ public class Users {
 
     @Enumerated(EnumType.STRING)
     private Roles role;
+
+    @Enumerated(EnumType.STRING)
+    private AccountType accountType;
+
+    @JsonFormat(pattern = "MM/dd/yyyy HH:mm:ss")
+    private LocalDateTime createdAt;
+
+    @JsonFormat(pattern = "MM/dd/yyyy HH:mm:ss")
+    private LocalDateTime updatedAt;
 
 }
