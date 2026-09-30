@@ -1,5 +1,6 @@
 package com.codewithlei.JobTracker.common.globalExceptionHandler;
 
+import com.codewithlei.JobTracker.appliedJob.exception.ApplicationAlreadyExistException;
 import com.codewithlei.JobTracker.users.exception.UserAlreadyExistException;
 import com.codewithlei.JobTracker.users.exception.UserNotFoundException;
 import org.springframework.http.HttpStatus;
@@ -12,6 +13,7 @@ import java.time.LocalDateTime;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
+    // Users Exception
     @ExceptionHandler(UserNotFoundException.class)
     public ResponseEntity<?> handleUserNotFound(UserNotFoundException e){
         ErrorMessage errorMessage = ErrorMessage.builder()
@@ -40,6 +42,17 @@ public class GlobalExceptionHandler {
                 .dateTime(LocalDateTime.now())
                 .build();
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                .body(errorMessage);
+    }
+    // Application Exception
+    @ExceptionHandler(ApplicationAlreadyExistException.class)
+    public ResponseEntity<?> handleApplicationAlreadyExist(ApplicationAlreadyExistException e){
+        ErrorMessage errorMessage = ErrorMessage.builder()
+                .status(409)
+                .message(e.getMessage())
+                .dateTime(LocalDateTime.now())
+                .build();
+        return ResponseEntity.status(HttpStatus.CONFLICT)
                 .body(errorMessage);
     }
 }

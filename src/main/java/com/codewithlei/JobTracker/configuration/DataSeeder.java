@@ -47,9 +47,7 @@ public class DataSeeder implements CommandLineRunner {
                 createJob("puma-logo.svg", "Puma", "Herzogenaurach, Germany", "E-commerce Backend Developer",
                         48000, 68000, LocalDate.of(2026, 12, 9), InterviewType.HYBRID, JobStatus.SHORTLISTED),
                 createJob("samsung.svg", "Samsung", "Seoul, South Korea", "Java Application Developer",
-                        55000, 80000, LocalDate.of(2027, 2, 3), InterviewType.IN_PERSON, JobStatus.PENDING),
-                createJob("visa.svg", "Visa", "Singapore", "Payments Software Engineer",
-                        72000, 105000, LocalDate.of(2026, 10, 30), InterviewType.VIRTUAL, JobStatus.SHORTLISTED)
+                        55000, 80000, LocalDate.of(2027, 2, 3), InterviewType.IN_PERSON, JobStatus.PENDING)
         );
 
         jobListingRepository.saveAll(jobList);

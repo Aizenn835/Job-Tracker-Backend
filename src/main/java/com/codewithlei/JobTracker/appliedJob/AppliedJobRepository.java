@@ -9,4 +9,5 @@ import java.util.List;
 public interface AppliedJobRepository extends JpaRepository<AppliedJobEntity, Long> {
     List<AppliedJobEntity> findAllByOrderByCreatedAtDesc();
     List<AppliedJobEntity> findByCompanyNameContainingIgnoreCase(String companyName);
+    Boolean existsByCompanyNameAndJobTitle(String companyName, String jobTitle);
 }

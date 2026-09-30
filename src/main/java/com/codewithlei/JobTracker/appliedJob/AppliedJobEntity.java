@@ -33,20 +33,21 @@ public class AppliedJobEntity {
     @Column(name = "job_title" , nullable = false)
     private String jobTitle;
 
-    @Column(name = "minimum_salary" , nullable = false)
+    @Column(name = "minimum_salary")
     private int minimumSalary;
 
-    @Column(name = "maximum_salary" , nullable = false)
+    @Column(name = "maximum_salary")
     private int maximumSalary;
 
     @Column( name = "interview_date" , nullable = false)
     private LocalDate interviewDate;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "interview_type")
+    @Column(name = "interview_type" , nullable = false)
     private InterviewType interviewType;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private JobStatus stage;
 
     @JsonFormat(pattern = "MM/dd/yyyy HH:mm:ss")
